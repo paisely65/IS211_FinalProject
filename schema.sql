@@ -1,21 +1,8 @@
-drop table if exists students;
-create table students (
-  id integer primary key autoincrement,
-  first_name text not null,
-  last_name text not null
-);
 
-drop table if exists quizzes;
-create table quizzes (
+create table if not exists posts (
   id integer primary key autoincrement,
-  subject text not null,
-  questions integer not null,
-  date text not null
-);
-
-drop table if exists results;
-create table results (
-  s_id integer not null,
-  q_id integer not null,
-  score integer not null
+  author text not null,
+  heading text not null,
+  content text not null,
+  timestamp date not null
 );
